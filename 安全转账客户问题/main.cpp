@@ -33,7 +33,8 @@ int main()
         graph[x-1].push_back(y-1);
     }
     int id = 0;
-    while(vis.find(id) == vis.end() && id < n){
+    while(id < n){
+        if(vis.find(id) != vis.end()) continue;
         isSafe(graph, id);
         id++;
     }
